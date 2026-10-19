@@ -53,7 +53,7 @@ try {
   assert.equal(await page.locator('.hazard-animation, .animation-control').count(),0);
   assert.equal(await page.locator('.theme-toggle, [data-theme]').count(),0,'The site has a single light style, with no theme switch');
   assert.equal(await page.locator('.mapping-field').getAttribute('aria-hidden'),'true');
-  assert.equal(await page.locator('img[alt="Portrait of Ken Hasselmann"]').getAttribute('src'),'assets/people/ken-hasselmann.png');
+  assert.equal(await page.locator('img[alt="Portrait of Ken Hasselmann"]').getAttribute('src'),'assets/people/ken-hasselmann.jpg');
   const sharePath = new URL(await page.locator('meta[property="og:image"]').getAttribute('content')).pathname;
   const shareResponse = await context.request.get(`${base}${sharePath}`);
   assert.equal(shareResponse.status(),200);
