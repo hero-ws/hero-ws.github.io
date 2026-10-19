@@ -64,7 +64,8 @@ for asset in re.findall(r'url\(["\']?([^"\')]+)', css):
     assert not asset.startswith(('http:', 'https:', '//')), f'External CSS asset: {asset}'
     assert (ROOT / 'assets/css' / asset).is_file(), f'Missing CSS asset: {asset}'
 assert (ROOT / 'assets/fonts/OFL.txt').is_file(), 'Bundled font license is required'
-assert 'mailto:hero-workshop@example.com' in source
+assert 'example.com' not in source and 'id="contact"' not in source, 'No placeholder contact email'
+assert 'double-blind' not in source and 'single-blind review' in source
 assert not any(tag == 'form' for tag, _ in page.tags)
 assert 'mario.malizia@' not in source
 assert '—' not in source
@@ -89,4 +90,4 @@ assert slots[4] == ('10:00', '11:00'), 'Poster session must last one hour'
 assert len(re.findall(r'<strong>Invited talk \d</strong>', agenda)) == 5
 assert 'end-user discussion' not in agenda.lower() and 'panel' not in agenda.lower()
 assert (ROOT / '.nojekyll').exists()
-print('PASS: local assets, unique anchors, accessible image attributes, a single light style, five speaker slots, the IEEE SSRR TC endorsement, seven organisers, four institutional logos, a placeholder email, and a continuous 240-minute programme with five talks and a 60-minute poster session.')
+print('PASS: local assets, unique anchors, accessible image attributes, a single light style, five speaker slots, the IEEE SSRR TC endorsement, seven organisers, four institutional logos, no placeholder email, single-blind review, and a continuous 240-minute programme with five talks and a 60-minute poster session.')

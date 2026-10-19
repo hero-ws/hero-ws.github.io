@@ -1,5 +1,5 @@
 {
-  "preserved_html": "4c7d698d687ea9fdc86e7e6afb3d8bcae62d3ea1f10a9b223b243090d6895234",
+  "preserved_html": "c76d4fda98749b807e484c0ab5738b2a2cc226717d75dff86355d651b89645e7",
   "files": {
     "assets/js/main.js": "a6a9b394e372cc25ccbbddcb103750ce91b3f35ee6f5e053147c0204f35bb1ac",
     "assets/fonts/OFL.txt": "91c25c350d3cac39da2736d74f7ba37ef648f5237a4e330a240615bc8d8c4360",
@@ -19,10 +19,12 @@
     "assets/people/eric.jpg": "4a5e304285002a5d3768331f5517a30cf3878d11a57fe89bff85a29cec5d8ed5",
     "assets/people/geert.jpg": "da881f9a51376a9729d6547607a53234152a69b6bb13ba77d11fcce4a9629fbb",
     "assets/people/jose-luis.jpg": "94201f9ab477897daaee4bd4b15adaf1abf2a5a3ed0e327f5e9281b20d4e0e5e",
-    "assets/people/ken-hasselmann.png": "4da273de40892609664b243475ddf4c85086a4ff818327a105aefac66ffbaa8c",
+    "assets/people/ken-hasselmann.jpg": "d81e3c43384cc0fcb293eeb7a3022b00a4abc14000e80088428b5d2a771fd930",
     "assets/people/ken.jpg": "a50eba6a86886452d6c51e0bdad1ebf390ead30528986647e563c82926b1bcd2",
     "assets/people/kostas.jpg": "dad4826d189d7ac0e3a223a9ce22aa5b8ccdfacf08b90e93d5f4599214181777",
     "assets/people/mario.jpg": "72c80a1a4501dfd2209a59debb7a7c1ae0586421738900a705572fedb53e7d54",
-    "assets/people/nikolaos.jpg": "b8bb1daf129ade336835f79ae147378a81c16f2cd91287c6e7f2eb21cc0dcef8"
+    "assets/people/nikolaos.jpg": "b8bb1daf129ade336835f79ae147378a81c16f2cd91287c6e7f2eb21cc0dcef8",
+    "assets/people/jose-luis-sanchez-lopez.jpg": "1dcb25a39b87a9af2fd4aef03a341fdb812c5fc386b77bc685d57e6a020f201d",
+    "assets/people/kostas-alexis.jpg": "b7aa28a5255cd5a3b689e6ad281bac297fdbc52250aa3ea6dc3455f5ed9a7045"
   }
 }
