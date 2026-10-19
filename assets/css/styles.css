@@ -149,7 +149,7 @@ h3 { font-size: 20px; line-height: 1.35; font-weight: 600; margin-bottom: var(--
 .organizer-portrait { position: relative; width: 136px; height: 136px; aspect-ratio: 1; overflow: hidden; border-radius: 50%; margin: 0 auto var(--space-3); background: var(--portrait-bg, #fff); outline: 1px solid var(--line); }
 .organizer-portrait img { position: absolute; display: block; max-width: none; width: var(--portrait-w); height: auto; left: var(--portrait-x); top: var(--portrait-y); }
 .portrait-mario { --portrait-w: 100.5%; --portrait-x: -0.2%; --portrait-y: 4.1%; }
-.portrait-ken { --portrait-w: 83.7%; --portrait-x: 10.2%; --portrait-y: -5.9%; --portrait-bg: #ece9f4; }
+.portrait-ken { --portrait-w: 83.7%; --portrait-x: 10.2%; --portrait-y: -5.9%; --portrait-bg: #efecf5; }
 .portrait-geert { --portrait-w: 99.2%; --portrait-x: 0.8%; --portrait-y: 0.8%; --portrait-bg: #eef2f5; }
 .portrait-nikolaos { --portrait-w: 109.4%; --portrait-x: -5%; --portrait-y: -0.6%; }
 .portrait-eric { --portrait-w: 112.2%; --portrait-x: -6%; --portrait-y: -2%; }
