@@ -149,7 +149,6 @@ h3 { font-size: 20px; line-height: 1.35; font-weight: 600; margin-bottom: var(--
 .organizer-portrait { display: block; position: relative; width: 136px; height: 136px; aspect-ratio: 1; overflow: hidden; border-radius: 50%; margin: 0 auto var(--space-3); background: var(--portrait-bg, #fff); outline: 1px solid var(--line); }
 .organizer-portrait:hover { outline: 2px solid var(--link); }
 .organizer-portrait:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
-.organizer-scholar { position: absolute; inset: auto 0 0; padding: 5px 0 12px; background: #202830; color: #fff; font-size: 11px; line-height: 1.3; text-align: center; }
 .organizer-portrait img { position: absolute; display: block; max-width: none; width: var(--portrait-w); height: auto; left: var(--portrait-x); top: var(--portrait-y); }
 .portrait-mario { --portrait-w: 100.5%; --portrait-x: -0.2%; --portrait-y: 4.1%; }
 .portrait-ken { --portrait-w: 83.7%; --portrait-x: 10.2%; --portrait-y: -5.9%; --portrait-bg: #efecf5; }
