@@ -169,7 +169,7 @@ try {
   await page.waitForTimeout(150);
   assert.notEqual(await snapshot(),still,'The continuous loop must resume');
   const contributions = await page.locator('#contributions').innerText();
-  assert(contributions.includes('4 to 6 pages') && contributions.includes('extended abstracts') && contributions.includes('posters, with selected spotlights'));
+  assert(contributions.includes('maximum of 6 pages, excluding references') && !contributions.includes('abstract') && contributions.includes('posters, with selected spotlights'));
   assert(contributions.includes('single-blind review') && !contributions.includes('double-blind'));
   assert(contributions.includes('completed research, work in progress, and conceptual approaches'));
   const nojs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}});
