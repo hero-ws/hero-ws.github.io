@@ -1,5 +1,5 @@
 {
-  "preserved_html": "42d754eb1b55865dc00517f19dde30b4b456aaee211473fb96b9a0ef0d0f20ab",
+  "preserved_html": "0bcc2332f7c85665c9ddcdb7e786de951b83a04c24e2a3fe6c07db39ba5a95ac",
   "files": {
     "assets/js/main.js": "a6a9b394e372cc25ccbbddcb103750ce91b3f35ee6f5e053147c0204f35bb1ac",
     "assets/fonts/OFL.txt": "91c25c350d3cac39da2736d74f7ba37ef648f5237a4e330a240615bc8d8c4360",
@@ -23,6 +23,8 @@
     "assets/people/ken.jpg": "a50eba6a86886452d6c51e0bdad1ebf390ead30528986647e563c82926b1bcd2",
     "assets/people/kostas.jpg": "dad4826d189d7ac0e3a223a9ce22aa5b8ccdfacf08b90e93d5f4599214181777",
     "assets/people/mario.jpg": "72c80a1a4501dfd2209a59debb7a7c1ae0586421738900a705572fedb53e7d54",
-    "assets/people/nikolaos.jpg": "b8bb1daf129ade336835f79ae147378a81c16f2cd91287c6e7f2eb21cc0dcef8"
+    "assets/people/nikolaos.jpg": "b8bb1daf129ade336835f79ae147378a81c16f2cd91287c6e7f2eb21cc0dcef8",
+    "assets/people/jose-luis-sanchez-lopez.jpg": "1dcb25a39b87a9af2fd4aef03a341fdb812c5fc386b77bc685d57e6a020f201d",
+    "assets/people/kostas-alexis.jpg": "b7aa28a5255cd5a3b689e6ad281bac297fdbc52250aa3ea6dc3455f5ed9a7045"
   }
 }

@@ -122,11 +122,11 @@ try {
   await page.keyboard.press('Escape');
   assert.equal(await menu.getAttribute('aria-expanded'),'false');
   await menu.click();
-  await page.locator('#primary-nav a[href="#contact"]').click();
+  await page.locator('#primary-nav a[href="#organizers"]').click();
   assert.equal(await menu.getAttribute('aria-expanded'),'false');
-  assert(page.url().endsWith('#contact'));
+  assert(page.url().endsWith('#organizers'));
   assert.equal(await page.locator('form').count(),0);
-  assert.equal(await page.locator('.contact-link').getAttribute('href'),'mailto:hero-workshop@example.com');
+  assert.equal(await page.locator('a[href^="mailto:"]').count(),0);
   assert.equal(requests.filter(r=>r.method!=='GET').length,0);
   assert.equal(requests.filter(r=>!r.url.startsWith(base)).length,0);
   await page.emulateMedia({reducedMotion:'reduce'});
@@ -169,7 +169,8 @@ try {
   await page.waitForTimeout(150);
   assert.notEqual(await snapshot(),still,'The continuous loop must resume');
   const contributions = await page.locator('#contributions').innerText();
-  assert(contributions.includes('6 pages') && contributions.includes('posters, with selected spotlights'));
+  assert(contributions.includes('4 to 6 pages') && contributions.includes('extended abstracts') && contributions.includes('posters, with selected spotlights'));
+  assert(contributions.includes('single-blind review') && !contributions.includes('double-blind'));
   assert(contributions.includes('completed research, work in progress, and conceptual approaches'));
   const nojs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}});
   const fallback = await nojs.newPage();
@@ -180,7 +181,7 @@ try {
   await fallback.locator('.footer-inner a[href="#top"]').click();
   assert.equal(await fallback.evaluate(()=>window.scrollY),0,'No-JS back-to-top must reach the document start');
   assert.deepEqual(errors,[]);
-  console.log('PASS: single light style at five viewport sizes, white even when the system prefers dark; no theme switch; updated Ken portrait; no overflow or header overlap; local fonts and images; share-preview PNG; circular portraits; desktop/mobile accessibility; menu and Escape; placeholder email contact; zero external requests; continuous hazard field without a pause control; white masthead; six-page papers and poster/selected spotlight format; reduced motion; cached-stylesheet regression; desktop/mobile back-to-top; no-JS navigation and back-to-top.');
+  console.log('PASS: single light style at five viewport sizes, white even when the system prefers dark; no theme switch; updated Ken portrait; no overflow or header overlap; local fonts and images; share-preview PNG; circular portraits; desktop/mobile accessibility; menu and Escape; no placeholder email; zero external requests; continuous hazard field without a pause control; white masthead; six-page papers and poster/selected spotlight format; reduced motion; cached-stylesheet regression; desktop/mobile back-to-top; no-JS navigation and back-to-top.');
 } catch (err) {
   console.error(err.message.split('\n').slice(0,8).join('\n'));
   process.exitCode=1;
