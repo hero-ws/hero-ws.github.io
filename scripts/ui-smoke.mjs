@@ -81,9 +81,10 @@ try {
         const rows = new Map();
         for (const card of cards) {
           const top = Math.round(card.getBoundingClientRect().top);
-          const positions = ['h3', '.speaker-affiliation', '.speaker-contribution', '.speaker-talk'].map(selector => Math.round(card.querySelector(selector).getBoundingClientRect().top));
-          if (rows.has(top) && positions.some((y, i) => Math.abs(y - rows.get(top)[i]) > 1)) return false;
-          rows.set(top, positions);
+          // Talk titles are optional; compare each element only where both cards have it.
+          const positions = ['h3', '.speaker-affiliation', '.speaker-contribution', '.speaker-talk'].map(selector => { const el = card.querySelector(selector); return el && Math.round(el.getBoundingClientRect().top); });
+          if (rows.has(top) && positions.some((y, i) => y !== null && rows.get(top)[i] !== null && Math.abs(y - rows.get(top)[i]) > 1)) return false;
+          rows.set(top, rows.has(top) ? rows.get(top).map((y, i) => y ?? positions[i]) : positions);
         }
         return true;
       });

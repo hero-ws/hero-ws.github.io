@@ -22,7 +22,11 @@ speaker_section = source.split('id="speakers">', 1)[1].split('</section>', 1)[0]
 assert 'confirmed' not in speaker_section.lower()
 assert 'accepted their invitations' not in speaker_section
 assert 'scheduling conflict' not in speaker_section
-assert source.index('class="workshop-facts"') < source.index('id="speakers"') < source.index('id="about"')
+assert source.index('id="topics"') < source.index('id="speakers"') < source.index('id="program"')
+nav = re.findall(r'<a (?:class="nav-cta" )?href="#([a-z]+)"', source.split('id="primary-nav"', 1)[1].split('</nav>', 1)[0])
+sections = [s for s in re.findall(r'<section [^>]*id="([a-z-]+)"', source) if s in nav[:-1]]
+assert nav[:-1] == sections, 'Header links must follow the page order'
+assert 'Emerita' not in source
 assert '<h2 id="speakers-title">Invited Speakers</h2>' in source
 assert 'Texas A&amp;M University, USA' in speakers
 for path, expected in baseline['files'].items():
