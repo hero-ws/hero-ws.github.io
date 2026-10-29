@@ -78,7 +78,6 @@ h1, h2, h3 { text-wrap: balance; }
 .hazard-panel { min-width: 0; margin: 0; }
 .hazard-art { position: relative; aspect-ratio: 1.25; }
 .mapping-field { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.hazard-symbol { position: absolute; left: 47%; top: 49%; width: 38px; height: 33px; transform: translate(-50%, -50%); }
 .hazard-panel figcaption { color: var(--muted); text-align: center; font-size: 13px; line-height: 1.6; }
 .proposal-badge { display: block; margin-bottom: var(--space-3); padding: 2px 0 2px 12px; border-left: 2px solid var(--accent); color: var(--text); font-size: 13px; font-weight: 500; line-height: 1.5; }
 .eyebrow, .section-label { color: var(--muted); font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: .065em; }

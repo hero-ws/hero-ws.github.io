@@ -61,6 +61,52 @@ document.querySelectorAll('.institution-art img').forEach(img => {
   function moving() {
     return visible && !document.hidden && !reduced.matches;
   }
+  // Selected particle warning, sharing the cloud clock and reduced-motion behavior.
+  function drawWarning(cx, cy, radius, phase) {
+    const t = phase;
+    const yellow = '#dfad20';
+    const s = Math.max(19, Math.min(27, radius * .16));
+    // The centre follows the same small drift as the innermost cloud contour.
+    ctx.save();
+    ctx.translate(cx + Math.sin(t + 1) * radius * .035, cy + Math.cos(t) * 2);
+    ctx.strokeStyle = yellow;
+    ctx.fillStyle = yellow;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    const vertices = [[0, -s], [s * .94, s * .64], [-s * .94, s * .64]];
+    function triangle(scale = 1) {
+      ctx.beginPath();
+      vertices.forEach(([x, y], i) => i ? ctx.lineTo(x * scale, y * scale) : ctx.moveTo(x * scale, y * scale));
+      ctx.closePath();
+    }
+    function point(u) {
+      const v = ((u % 1) + 1) % 1 * 3;
+      const i = Math.floor(v), f = v - i;
+      return [vertices[i][0] * (1 - f) + vertices[(i + 1) % 3][0] * f,
+        vertices[i][1] * (1 - f) + vertices[(i + 1) % 3][1] * f];
+    }
+    function bang(alpha = .9) {
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = 2.7;
+      ctx.beginPath(); ctx.moveTo(0, -s * .37); ctx.lineTo(0, s * .09); ctx.stroke();
+      ctx.beginPath(); ctx.arc(0, s * .34, 1.7, 0, tau); ctx.fill();
+    }
+    // Each point loosens into the cloud, then gathers back onto the warning edge.
+    triangle(); ctx.globalAlpha = .22; ctx.lineWidth = 1; ctx.stroke();
+    for (let i = 0; i < 69; i++) {
+      const u = i / 69;
+      const [x, y] = point(u);
+      const release = Math.max(0, Math.sin(t * 2 - u * tau)) ** 8;
+      const a = Math.atan2(y, x);
+      ctx.globalAlpha = .85 - release * .55;
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * release * s * 1.1,
+        y + Math.sin(a) * release * s * .8, i % 3 === 0 ? 1.55 : 1.05, 0, tau);
+      ctx.fill();
+    }
+    bang(.72 + .18 * Math.sin(t * 2) ** 2);
+    ctx.restore();
+  }
   function draw(now) {
     frame = 0;
     if (moving() && previousTime !== null) elapsed += Math.min(now - previousTime, 64);
@@ -107,6 +153,7 @@ document.querySelectorAll('.institution-art img').forEach(img => {
       ctx.arc(x, y, i % 9 === 0 ? 2 : 1.1, 0, tau);
       ctx.fill();
     }
+    drawWarning(cx, cy, radius, phase);
     ctx.globalAlpha = 1;
     if (moving()) frame = requestAnimationFrame(draw);
   }
