@@ -73,7 +73,8 @@ assert 'hazard-animation' not in source and 'animation-control' not in source
 assert 'theme-toggle' not in source and 'theme.js' not in source and not (ROOT / 'assets/js/theme.js').exists(), 'The site has a single light style'
 assert 'data-theme' not in (ROOT / 'assets/css/styles.css').read_text()
 assert 'organizer-role' not in source and 'speaker-theme' not in source
-assert source.count('AI tools, including ChatGPT, assisted in the development of this website.') == 1
+assert source.count('This website was built with the help of AI tools.') == 1
+assert 'ChatGPT' not in source
 assert 'Pending acceptance' in source
 assert len(re.findall(r'class="speaker-card"', source)) == 5
 assert 'Technical Committee on Safety, Security, and Rescue Robotics' in source and 'class="endorsement-list"' in source

@@ -6,7 +6,7 @@ Created and maintained by Mario Malizia and Ken Hasselmann.
 
 ## AI tools used
 
-AI tools, including ChatGPT, assisted in the development of this website. Mario and Ken are responsible for its content and implementation.
+AI tools helped build this website. Mario and Ken are responsible for its content and implementation.
 
 ## Local preview
 

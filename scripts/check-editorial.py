@@ -19,7 +19,8 @@ assert speakers.count('src="assets/img/speaker-placeholder.svg"') == 5
 assert speakers.count('class="speaker-talk"') == 1
 assert 'Tentative talk title: “Swarms in the real world: from firefighting to city logistics”' in speakers
 speaker_section = source.split('id="speakers">', 1)[1].split('</section>', 1)[0]
-assert 'confirmed' not in speaker_section.lower()
+statuses = re.findall(r'<p class="speaker-status( speaker-status-pending)?">(.*?)</p>', speakers)
+assert statuses == [('', 'Confirmed')] * 4 + [(' speaker-status-pending', 'To be confirmed')], 'Four speakers are confirmed; KDRT is to be confirmed'
 assert 'accepted their invitations' not in speaker_section
 assert 'scheduling conflict' not in speaker_section
 assert source.index('id="topics"') < source.index('id="speakers"') < source.index('id="program"')
@@ -31,4 +32,4 @@ assert '<h2 id="speakers-title">Invited Speakers</h2>' in source
 assert 'Texas A&amp;M University, USA' in speakers
 for path, expected in baseline['files'].items():
     assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, f'Existing asset or animation changed: {path}'
-print('PASS: speaker order, status, titles and no-photos note; all other website content, navigation code, portraits, logos and fonts preserved.')
+print('PASS: speaker order, confirmation status, titles and no-photos note; all other website content, navigation code, portraits, logos and fonts preserved.')

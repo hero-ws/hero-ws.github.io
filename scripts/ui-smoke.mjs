@@ -82,13 +82,13 @@ try {
         for (const card of cards) {
           const top = Math.round(card.getBoundingClientRect().top);
           // Talk titles are optional; compare each element only where both cards have it.
-          const positions = ['h3', '.speaker-affiliation', '.speaker-contribution', '.speaker-talk'].map(selector => { const el = card.querySelector(selector); return el && Math.round(el.getBoundingClientRect().top); });
+          const positions = ['h3', '.speaker-status', '.speaker-affiliation', '.speaker-contribution', '.speaker-talk'].map(selector => { const el = card.querySelector(selector); return el && Math.round(el.getBoundingClientRect().top); });
           if (rows.has(top) && positions.some((y, i) => y !== null && rows.get(top)[i] !== null && Math.abs(y - rows.get(top)[i]) > 1)) return false;
           rows.set(top, rows.has(top) ? rows.get(top).map((y, i) => y ?? positions[i]) : positions);
         }
         return true;
       });
-      assert(aligned, `Speaker names, affiliations, expertise and talk titles must align at ${width}`);
+      assert(aligned, `Speaker names, statuses, affiliations, expertise and talk titles must align at ${width}`);
 
       assert(width > 800 ? result.panel.sideBySide : result.panel.stacked, `Illustration must sit beside the text on desktop and below it on mobile at ${width}`);
       assert.equal(result.headerOverlaps,false,`Overlapping header content at ${width}`);

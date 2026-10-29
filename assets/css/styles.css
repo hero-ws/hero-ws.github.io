@@ -88,9 +88,10 @@ h1 { font-size: clamp(40px, 4vw, 56px); line-height: 1.09; letter-spacing: -.025
 .hero-subtitle { font-size: 23px; font-weight: 400; line-height: 1.4; margin-bottom: var(--space-2); text-wrap: balance; }
 .hero-lead { max-width: 68ch; color: var(--text); font-size: 17px; line-height: 1.7; margin-bottom: var(--space-3); }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 32px; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); padding: 10px 0; border-radius: 0; font-weight: 600; font-size: 15px; text-decoration: none; }
-.button-primary { border-bottom: 2px solid var(--accent); color: var(--ink); }
-.button-primary:hover { border-color: var(--ink); }
+/* Both hero links share one underline position; the primary link keeps a heavier amber rule. */
+.button { display: inline-flex; align-items: center; gap: 12px; padding: 10px 0; font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.button-primary { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.button-primary:hover { text-decoration-color: var(--ink); }
 .text-link { display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; }
 .hero-actions .text-link { padding-block: 10px; }
 .workshop-facts { display: grid; grid-template-columns: .9fr 1fr 1.3fr; gap: var(--space-4); margin: 0; padding: var(--space-3) 0; border-block: 1px solid var(--line); }
@@ -133,11 +134,15 @@ h3 { font-size: 20px; line-height: 1.35; font-weight: 600; margin-bottom: var(--
 .speaker-intro { margin-bottom: var(--space-4); }
 .speaker-intro > p:last-child { max-width: 90ch; margin: var(--space-2) 0 0; color: var(--text); }
 .speaker-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); }
-.speaker-card { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 12px; padding-block: var(--space-3); border-top: 1px solid var(--line); }
+.speaker-card { display: grid; grid-template-rows: subgrid; grid-row: span 6; row-gap: 12px; padding-block: var(--space-3); border-top: 1px solid var(--line); }
 .speaker-portrait { width: 120px; height: 120px; overflow: hidden; border-radius: 50%; margin: 0 0 4px; }
 /* A future photograph uses the same image dimensions and crop as the placeholder. */
 .speaker-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .speaker-card h3 { margin: 0; font-size: 17px; }
+.speaker-status { display: inline-flex; align-items: center; gap: 6px; justify-self: start; margin: -6px 0 0; color: #2c6e49; font-size: 12px; font-weight: 500; line-height: 1.4; letter-spacing: .03em; }
+.speaker-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.speaker-status-pending { color: var(--poster-ink); }
+.speaker-status-pending::before { background: transparent; box-shadow: inset 0 0 0 1.5px currentColor; }
 .speaker-affiliation { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0; }
 .speaker-affiliation a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
 .speaker-contribution, .speaker-talk { font-size: 14px; line-height: 1.5; margin: 0; }
