@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 80" role="img" aria-labelledby="title">
+<title id="title">Wheeled exploration robot</title>
+<g stroke="#254e72" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Far-side wheels sit behind the low chassis. -->
+  <g fill="#254e72">
+    <circle cx="36" cy="47" r="8"/>
+    <circle cx="80" cy="47" r="8"/>
+  </g>
+  <path d="M15 39 29 29H76L86 38 73 50H15Z" fill="#e5edf4"/>
+  <path d="M15 39H73V53H15Z" fill="#fff"/>
+  <path d="M73 39 86 38V47L73 53Z" fill="#c3d3e2"/>
+  <path d="M23 43H63" stroke="#f2a33c" stroke-width="3"/>
+  <path d="M30 30V17" fill="none"/>
+  <path d="M28 16H32" fill="none"/>
+  <!-- A lidar puck and equipment box, without facial features. -->
+  <path d="M50 30V23" fill="none"/>
+  <path d="M42 18H58V24C54 27 46 27 42 24Z" fill="#f2a33c"/>
+  <ellipse cx="50" cy="18" rx="8" ry="3" fill="#fff5e4"/>
+  <path d="M64 30V26H74V30" fill="#fff"/>
+  <g fill="#254e72">
+    <circle cx="26" cy="55" r="10"/>
+    <circle cx="65" cy="55" r="10"/>
+  </g>
+  <g fill="#e5edf4" stroke="none">
+    <circle cx="26" cy="55" r="4"/>
+    <circle cx="65" cy="55" r="4"/>
+  </g>
+</g>
+</svg>

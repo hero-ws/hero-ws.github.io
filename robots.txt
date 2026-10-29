@@ -1,0 +1,4 @@
+# DRAFT WEBSITE: discourage indexing until the workshop is accepted.
+# Remove this restriction and the robots meta tag in index.html before public launch.
+User-agent: *
+Disallow: /
